@@ -1,4 +1,4 @@
-let mongoose = require('mongoose');
+let mongoose = require('mongoose');//ODM
 let app = require('./app');
 let port = 3000;
 
