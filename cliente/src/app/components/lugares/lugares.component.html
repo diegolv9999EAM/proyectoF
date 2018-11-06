@@ -1,0 +1,5 @@
+<section *ngFor="let place of places">
+  <h3>LUGAR :{{place.name | titlecase}}</h3>
+  <p>DESCRIPCION :{{place.description | titlecase}}</p>
+  <address>LOCALIZACION: {{place.location | titlecase}}</address>
+</section>

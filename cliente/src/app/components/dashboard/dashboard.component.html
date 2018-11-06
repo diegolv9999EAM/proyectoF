@@ -1,0 +1,28 @@
+<h1>PANEL DE CONTROL</h1>
+<form #placeForm="ngForm" (ngSubmit)="crearLugar(placeForm.value)">
+    <input type="text" placeholder="lugar" ngModel name="name">
+    <textarea name="" placeholder="descripcion" ngModel name="description" id="" cols="30" rols="10"></textarea> 
+    <input type="text" placeholder="direccion" ngModel name="location">
+    <button type="submit">CREAR LUGAR</button>
+   </form>
+
+<table>
+  <tr>
+    <th>LUGAR</th>
+    <th>DESRIPCION</th>
+    <th>UBIACION</th>
+    <th>OPCIONES</th>
+  </tr>
+  <tr *ngFor="let place of places">
+    <td>{{place.name}}</td>
+    <td>{{place.description}}</td>
+    <td>{{place.location}}</td>
+    <td>
+        <i class="fa fa-pencil-square" aria-hidden="true"></i> -
+        <a (click)="eliminarlugar(place._id)">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+        </a>
+        
+    </td>
+  </tr>
+</table>
