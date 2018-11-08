@@ -11,7 +11,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {FormsModule} from '@angular/forms';
 
 import {PlacesService} from './_services/places.service';
+import {UsersService} from './_services/users.service';
+
 import { HomeComponent } from './components/home/home.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { HomeComponent } from './components/home/home.component';
     LoginComponent,
     RegistroComponent,
     DashboardComponent,
-    HomeComponent
+    HomeComponent,
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,7 @@ import { HomeComponent } from './components/home/home.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [PlacesService],
+  providers: [PlacesService,UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

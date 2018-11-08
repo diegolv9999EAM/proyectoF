@@ -17,8 +17,7 @@ export class PlacesService {
     return this.http.post(this.API_URL, places)
   }
   
-  eliminar(_id:String){
+    eliminar(_id:String){
     return this.http.delete(this.API_URL+`/${_id}`); 
- //   return this.http.delete(this.API_URL+"/"+_id); 
      }
   }

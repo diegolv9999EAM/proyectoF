@@ -2,7 +2,6 @@
 <form #placeForm="ngForm" (ngSubmit)="crearLugar(placeForm.value)">
     <input type="text" placeholder="lugar" ngModel name="name">
     <textarea name="" placeholder="descripcion" ngModel name="description" id="" cols="30" rols="10"></textarea> 
-    <input type="text" placeholder="direccion" ngModel name="location">
     <button type="submit">CREAR LUGAR</button>
    </form>
 
@@ -10,15 +9,15 @@
   <tr>
     <th>LUGAR</th>
     <th>DESRIPCION</th>
-    <th>UBIACION</th>
     <th>OPCIONES</th>
   </tr>
   <tr *ngFor="let place of places">
     <td>{{place.name}}</td>
     <td>{{place.description}}</td>
-    <td>{{place.location}}</td>
     <td>
-        <i class="fa fa-pencil-square" aria-hidden="true"></i> -
+        <a>
+            <i class="fa fa-pencil-square" aria-hidden="true"></i> -
+        </a> 
         <a (click)="eliminarlugar(place._id)">
             <i class="fa fa-trash" aria-hidden="true"></i>
         </a>
@@ -26,3 +25,16 @@
     </td>
   </tr>
 </table>
+
+<table>
+    <tr>
+      <th>NOMBRE DE USUARIO</th>
+      <th>CORREO ELECTRONICO</th>
+      <th>PASSWORD</th>
+    </tr>
+    <tr *ngFor="let user of users">
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.password}}</td>
+    </tr>
+  </table>

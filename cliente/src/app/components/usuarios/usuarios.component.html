@@ -1,0 +1,14 @@
+<h1>INGRESO DE USUARIOS</h1>
+<form #placeForm="ngForm" (ngSubmit)="crearUsuario(placeForm.value)">
+    <input type="text" placeholder="nombre de usuario" ngModel name="username">
+    <input type="email" placeholder="email" ngModel name="email">
+    <input type="password" placeholder="password" ngModel name="password">
+    <button type="submit">REGISTRARSE</button>
+   </form>
+
+
+
+<section *ngFor="let user of users">
+  <h3>NOMBRE :{{user.username}}</h3>
+  <p>MAIL :{{user.email}}</p>
+</section>

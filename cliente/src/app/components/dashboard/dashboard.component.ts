@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
 import {PlacesService} from '../../_services/places.service';
 import {Places} from '../../_interfaces/places';
+
+import{UsersService} from '../../_services/users.service';
+import {Users} from '../../_interfaces/users';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +14,14 @@ import {Places} from '../../_interfaces/places';
 export class DashboardComponent implements OnInit {
   places:Places[] = [];
   lugares:any={};
-  constructor(private placesService: PlacesService) { }
+
+  users:Users[] =[];
+  usuarios:any={};
+  constructor(private placesService: PlacesService,private usersService: UsersService) { }
 
   ngOnInit() {
     this.listarLugares();
+    this.listarUsuarios();
   }
    listarLugares(){
      this.placesService.listar().subscribe((places: Places[])=> {
@@ -35,5 +43,21 @@ export class DashboardComponent implements OnInit {
       })
 
     }
+ // ---------------------------------------- 
+ listarUsuarios(){
+  this.usersService.listar().subscribe((users: Users[])=> {
+  //  console.log(places);
+  this.users = users;
+  });
+ }
+
+ crearUsuario(usuarios){
+  //console.log(lugares);
+  this.usersService.crear(usuarios).subscribe(usuarios => {
+   this.usuarios=usuarios;
+   this.listarUsuarios();
+ })
+ }
+
 }
 
