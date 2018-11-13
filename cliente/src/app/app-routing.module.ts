@@ -11,10 +11,12 @@ const routes: Routes = [
   { path: 'places', component: LugaresComponent},
   { path: 'users',  component: UsuariosComponent},
   { path: '', component: HomeComponent},
- // {path: '**',component: HomeComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'dashboard', component: DashboardComponent}
+  
+  { path: 'dashboard', component: DashboardComponent},
+   {path: '**',component: HomeComponent},
  // {path: '',pathMatch: 'full',redirectTo: "places"}
+
 ];
 
 @NgModule({

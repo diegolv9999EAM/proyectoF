@@ -43,7 +43,7 @@ export class DashboardComponent implements OnInit {
       })
 
     }
- // ---------------------------------------- 
+ // ------------------------------------------------------------
  listarUsuarios(){
   this.usersService.listar().subscribe((users: Users[])=> {
   //  console.log(places);

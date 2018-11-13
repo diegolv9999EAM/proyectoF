@@ -1,40 +1,57 @@
-<h1>PANEL DE CONTROL</h1>
-<form #placeForm="ngForm" (ngSubmit)="crearLugar(placeForm.value)">
-    <input type="text" placeholder="lugar" ngModel name="name">
-    <textarea name="" placeholder="descripcion" ngModel name="description" id="" cols="30" rols="10"></textarea> 
-    <button type="submit">CREAR LUGAR</button>
-   </form>
+<div class="container">
+    <div class="row center-xs">
+    <header>
+    <h2>PANEL DE CONTROL</h2>
+  </header>
+  <section class="col-xs-12 col-sm-6 col-md-3">
+      <h2>CREAR LUGARES</h2>
+<form  #placeForm="ngForm" (ngSubmit)="crearLugar(placeForm.value)">
+    <input class="formulario" type="text" placeholder="lugar" ngModel name="name"><br><br>
+    <textarea class="formulario" placeholder="descripcion" ngModel name="description" id="" cols="30" rols="10"></textarea> <br><br>
+    <button class="formularioB" type="submit">CREAR</button>
+</form>
+      <br>
+      <table>
+          <tr>
+            <th>LUGAR</th>
+            <th>DESRIPCION</th>
+            <th>OPCIONES</th>
+            
+          </tr>
+          <br>
+          <tr *ngFor="let place of places">
+            <td class="nombrelugar">{{place.name}}</td>
+            <td>{{place.description}}</td>
+            <td class="opciones">
+                <a>
+                    <i class="fa fa-pencil-square" aria-hidden="true"></i> -
+                </a> 
+                <a (click)="eliminarlugar(place._id)">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </a>
+                
+            </td>
+          </tr>
+          <br>
+        </table>
+        <table class="usuarios">
+            <tr>
+              <th>NOMBRE DE USUARIO</th>
+              <th>CORREO ELECTRONICO</th>
+              <th>PASSWORD</th>
+            </tr>
+            <tr *ngFor="let user of users">
+              <td>{{user.username}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.password}}</td>
+            </tr>
+          </table>
+          <footer>
+              <p>&copy; Derechos reservados</p>
+            </footer>
+  </section>
+  
+</div>
 
-<table>
-  <tr>
-    <th>LUGAR</th>
-    <th>DESRIPCION</th>
-    <th>OPCIONES</th>
-  </tr>
-  <tr *ngFor="let place of places">
-    <td>{{place.name}}</td>
-    <td>{{place.description}}</td>
-    <td>
-        <a>
-            <i class="fa fa-pencil-square" aria-hidden="true"></i> -
-        </a> 
-        <a (click)="eliminarlugar(place._id)">
-            <i class="fa fa-trash" aria-hidden="true"></i>
-        </a>
-        
-    </td>
-  </tr>
-</table>
-
-<table>
-    <tr>
-      <th>NOMBRE DE USUARIO</th>
-      <th>CORREO ELECTRONICO</th>
-      <th>PASSWORD</th>
-    </tr>
-    <tr *ngFor="let user of users">
-      <td>{{user.username}}</td>
-      <td>{{user.email}}</td>
-      <td>{{user.password}}</td>
-    </tr>
-  </table>
+</div>
+  

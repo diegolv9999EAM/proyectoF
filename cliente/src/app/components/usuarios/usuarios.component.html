@@ -1,14 +1,20 @@
-<h1>INGRESO DE USUARIOS</h1>
+<div class="container">
+    <div class="row center-xs">
+        <section class="col-xs-12 col-sm-6 col-md-3">
+        <header>
+            <h2>INGRESO DE USUARIO</h2>
+        </header><br>
 <form #placeForm="ngForm" (ngSubmit)="crearUsuario(placeForm.value)">
-    <input type="text" placeholder="nombre de usuario" ngModel name="username">
-    <input type="email" placeholder="email" ngModel name="email">
-    <input type="password" placeholder="password" ngModel name="password">
-    <button type="submit">REGISTRARSE</button>
-   </form>
+    <input class="formulario"type="text" placeholder="nombre de usuario" ngModel name="username"><br><br>
+    <input class="formulario"type="email" placeholder="email" ngModel name="email"><br><br>
+    <input class="formulario"type="password" placeholder="password" ngModel name="password"><br><br>
+    <button class="formularioB"  type="submit">REGISTRARSE</button>
+  </form>
+  <br>
+  <footer>
+      <p>&copy; Derechos reservados</p>
+  </footer> 
+</section> 
+</div>
+</div>
 
-
-
-<section *ngFor="let user of users">
-  <h3>NOMBRE :{{user.username}}</h3>
-  <p>MAIL :{{user.email}}</p>
-</section>

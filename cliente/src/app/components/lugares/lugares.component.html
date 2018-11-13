@@ -1,4 +1,17 @@
-<section *ngFor="let place of places">
-  <h3>LUGAR :{{place.name | titlecase}}</h3>
-  <p>DESCRIPCION :{{place.description | titlecase}}</p>
-</section>
+<div class="container">
+<header>
+  <h2>LUGARES</h2>
+</header>
+    <section class="col-xs-12">
+<article *ngFor="let place of places">
+  
+  <h3>{{place.name | titlecase}}</h3><br>
+  <hr>
+  <p>{{place.description | titlecase}}</p>
+  <hr>
+</article>
+</section>   
+<footer>
+    <p>&copy; Derechos reservados</p>
+  </footer>
+</div>
